@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/logo.png" type="image">
+    <title>Movie App Exame</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="" >
+
+<div class="loading ">
+    <span class="loader"></span>
+</div>
+
+<div class="scroller"></div>
+
+<div class="scroll-to-top">
+    <div class="icon">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+</div>
+
+<aside class="position-fixed vh-100">
+
+    <div class="left bg-black d-flex flex-column justify-content-between p-4 text-white">
+        <ul data-aos="fade-down" class="m-0  p-0 animate ">
+            <li  class="Playing">Now Playing</li>
+            <li  class="Popular">Popular</li>
+            <li  class="Rated">Top Rated</li>
+            <li  class="Trending">Trending</li>
+            <li  class="UpComing">UpComing</li>
+            <li  class="contact"><a href="#contact" class="">Contact Us</a></li>
+        </ul>
+        <div class="aside-footer ">
+            <ul class="d-flex gap-2 fs-5 m-0 p-0">
+                <li><i class="fa-brands fa-facebook"></i></li>
+                <li><i class="fa-brands fa-twitter"></i></li>
+                <li><i class="fa-solid fa-globe"></i></li>
+            </ul>
+            <p>Copyright Â© 2019 All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <div class="right bg-white d-flex flex-column justify-content-between py-3 align-items-center">
+        <img src="./images/logo.png" class=" w-50" alt="">
+
+        <div class="o-x">
+            <i class="fa-solid fa-bars-staggered fs-3 open "></i>
+            <i class="fa-solid fa-x close fs-3 d-none"></i>
+        </div>
+
+        <ul class="g-sh">
+            <li><i class="fa-solid fa-globe"></i></li>
+            <i class="fa-solid fa-share-nodes"></i>
+        </ul>
+
+    </div>
+
+</aside>
+
+<div id="searchInput" class="w-50 mx-auto my-5">
+    <input type="text" class=" ps-4 text-white p-2 w-100 mx-auto " placeholder="Search">
+</div>
+
+<section id="main-section">
+    <div class="container">
+        <div class="row  g-5">
+
+            <!-- <div class="col-md-4 text-white">
+                <div class="image position-relative">
+                    <img src="./images/face-icons-emoji-heart-emotions-260nw-1880358622-removebg-preview.png" class="w-100 rounded-3" alt="">
+                    <div class="layer bg- position-absolute top-0 start-0 end-0 bottom-0 rounded-3">
+                        <h2>Title</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, dicta?</p>
+                        <p>Release Date : </p>
+                        <span></span><span></span><span></span>
+                        <div class="circle ">
+                            <span>2</span>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+    </div>
+</section>
+
+<section id="contact" class=" py-5 mt-5">
+    <div class="container ">
+        <div class="row  g-4 ">
+
+            <div class="col-lg-6  ">
+                <input type="text" oninput="validName()" id="userName" class="  bg-dark-subtle"  placeholder="Enter Your Name" >
+                <div class="invalid-feedback feedBack" >Plz Enter Your Name Without Special characters Or numbers </div>
+            </div>
+
+            <div class="col-lg-6" >
+                <input type="email" oninput="validEmail()"  id="userEmail" class="   bg-dark-subtle"  placeholder="Enter Your Email">
+                <div class="invalid-feedback feedBack">Plz Enter Valid Email Like [ user@gmail.com ]</div>
+            </div>
+
+            <div class="col-lg-6" >
+                <input type="text" oninput="validPhone()"  id="userPhone" class="   bg-dark-subtle"  placeholder="Enter Your Phone">
+                <div class="invalid-feedback feedBack">Plz Enter Valid Egyption Phone Number From 11 Number Start By 0 Like [ 01122335666 ]</div>
+            </div>
+
+            <div class="col-lg-6 " onmou >
+                <input type="number" oninput="validAge()"  id="userAge" class="   bg-dark-subtle"  placeholder="Enter Your Age">
+                <div class="invalid-feedback feedBack"> Just From 16 To 99 Years Allowed </div>
+            </div>
+
+            <div class="col-lg-6 " >
+                <input type="password" oninput="validPassword()"  id="userPassword" class="bg-dark-subtle z-n1"  placeholder="Enter A Password">
+                <div class="seen w-100 d-flex justify-content-end position-relative">
+                    <i class="fa-solid fa-eye see "></i>
+                    <i class="fa-solid fa-eye-slash unsee d-none"></i>
+                </div>
+                <div class="invalid-feedback feedBack">Plz Enter valid password Minimum Eight Characters, At Least One letter And One Number </div>
+            </div>
+
+            <div class="col-lg-6" >
+                <input type="password" oninput="validRepassword()"  id="Repassword" class=" mb-4  bg-dark-subtle"  placeholder="Repassword">
+                <div class="invalid-feedback feedBack">Plz Enter The Same Password You Created</div>
+            </div> 
+
+            <button id="submitBtn" type="button" class="btn testBtn btn-dark w-25 mt-4">Submite</button>
+        </div>
+    </div>
+</section>
+
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+    const options = {
+    bottom: '32px', // مكان الزر
+    right: '32px',
+    label: '🌓',
+    };
+    const darkmode = new Darkmode(options);
+    darkmode.showWidget(); // يظهر الزر لتبديل الوضع
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
